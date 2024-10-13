@@ -1,0 +1,79 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  margin: 0;
+  background-color: #121212;
+  font-family: "Arial", sans-serif;
+}
+
+.btn {
+  position: relative;
+  padding: 15px 40px;
+  font-size: 20px;
+  color: white;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, #ff00ff, #00ffff);
+  border: 2px solid transparent;
+  border-radius: 50px;
+  background-clip: padding-box;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  box-shadow: 0 5px 15px rgba(0, 255, 255, 0.5),
+    0 5px 15px rgba(255, 0, 255, 0.5);
+}
+
+.btn:before,
+.btn:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120%;
+  height: 120%;
+  border-radius: 50px;
+  background: linear-gradient(135deg, #00ffff, #ff00ff);
+  z-index: -1;
+  opacity: 0;
+  transition: all 0.5s ease;
+  transform: translate(-50%, -50%) scale(1.2);
+}
+
+.btn:hover:before {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.btn:hover {
+  color: #fff;
+  border: 2px solid #00ffff;
+  transform: scale(1.05);
+}
+
+.btn:active {
+  background: linear-gradient(135deg, #00ff88, #ff0055);
+  box-shadow: 0 4px 10px rgba(255, 0, 255, 0.6),
+    0 4px 10px rgba(0, 255, 255, 0.6);
+}
+
+.btn:after {
+  filter: blur(20px);
+}
+
+.youtube-link {
+  margin-top: 20px;
+  color: white;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+.youtube-link a {
+  color: #ff416c;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+.youtube-link a:hover {
+  color: #ff4b2b;
+}
