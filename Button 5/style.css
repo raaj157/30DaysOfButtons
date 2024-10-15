@@ -1,0 +1,88 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  margin: 0;
+  background-color: #121212;
+  font-family: "Arial", sans-serif;
+}
+
+.holo-btn {
+  position: relative;
+  padding: 15px 40px;
+  font-size: 20px;
+  color: white;
+  text-transform: uppercase;
+  border: 2px solid transparent;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.2),
+    rgba(255, 255, 255, 0.1)
+  );
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+  z-index: 1;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.holo-btn::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #ffcc00, #ff7b00, #ff007b, #7200ff);
+  z-index: -1;
+  border-radius: 50px;
+  opacity: 0.8;
+  background-size: 400%;
+  animation: holo-glow 4s infinite linear;
+}
+
+.holo-btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50px;
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2),
+    inset 0 0 30px rgba(255, 255, 255, 0.1);
+  z-index: -1;
+}
+
+@keyframes holo-glow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+.youtube-link {
+    margin-top: 20px;
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+.youtube-link a {
+    color: #ff416c;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+.youtube-link a:hover {
+    color: #ff4b2b;
+}
