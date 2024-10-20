@@ -1,0 +1,79 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+    background: #1f1f1f;
+    font-family: 'Arial', sans-serif;
+}
+
+.ripple-btn {
+    position: relative;
+    padding: 20px 60px;
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #ffffff;
+    background: linear-gradient(45deg, #ff7eb3, #ff758c);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: background 0.4s ease, color 0.4s ease;
+}
+
+.ripple-btn:hover {
+    background: linear-gradient(45deg, #6a0572, #c400c6);
+    color: #f0f0f0;
+}
+
+.ripple-btn::before,
+.ripple-btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400%;
+    height: 400%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 20%, transparent 20%);
+    transform: translate(-50%, -50%) scale(0);
+    border-radius: 50%;
+    opacity: 0;
+    transition: transform 0.8s, opacity 1s;
+}
+
+.ripple-btn::after {
+    width: 500%;
+    height: 500%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 15%, transparent 15%);
+}
+
+.ripple-btn:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.5);
+}
+
+.ripple-btn:hover::after {
+    transform: translate(-50%, -50%) scale(1.2);
+    opacity: 1;
+    box-shadow: 0px 0px 30px rgba(255, 255, 255, 0.4);
+}
+
+
+.youtube-link {
+    margin-top: 20px;
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+.youtube-link a {
+    color: #ff416c;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+.youtube-link a:hover {
+    color: #ff4b2b;
+}
