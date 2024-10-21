@@ -1,0 +1,85 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  margin: 0;
+  background: linear-gradient(135deg, #1e1e1e, #33334d);
+  font-family: "Arial", sans-serif;
+}
+
+.neon-btn {
+  position: relative;
+  padding: 15px 40px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  background: #1e1e1e;
+  border: 2px solid transparent;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-radius: 8px;
+  cursor: pointer;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.6), 0 0 40px rgba(0, 255, 255, 0.4),
+    0 0 60px rgba(0, 255, 255, 0.3);
+  transition: color 0.3s ease, background 0.3s ease;
+}
+
+.neon-btn::before,
+.neon-btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  transition: all 0.5s ease;
+}
+
+.neon-btn::before {
+  border: 3px solid rgba(0, 255, 255, 0.6);
+  clip-path: inset(0 0 0 100%);
+}
+
+.neon-btn::after {
+  border: 3px solid rgba(255, 0, 255, 0.6);
+  clip-path: inset(0 100% 0 0);
+}
+
+.neon-btn:hover::before {
+  clip-path: inset(0 0 0 0);
+}
+
+.neon-btn:hover::after {
+  clip-path: inset(0 0 0 0);
+}
+
+.neon-btn:hover {
+  background: linear-gradient(45deg, #00ffea, #ff00cc);
+  color: #000;
+}
+
+.neon-btn:active {
+  transform: scale(0.95);
+}
+
+.youtube-link {
+  margin-top: 60px;
+  text-align: center;
+  font-size: 1rem;
+  color: black;
+}
+
+.youtube-link a {
+  color: #ff0000;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.youtube-link a:hover {
+  color: #fff;
+}
