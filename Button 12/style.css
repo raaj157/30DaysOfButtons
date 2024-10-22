@@ -1,0 +1,60 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  margin: 0;
+  background-color: #222;
+  font-family: "Arial", sans-serif;
+}
+
+.floating-btn {
+  position: relative;
+  padding: 15px 50px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(145deg, #ff6a00, #ee0979);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  box-shadow: 0 10px 30px rgba(255, 106, 0, 0.4),
+    0 5px 15px rgba(238, 9, 121, 0.4);
+}
+
+.floating-btn:hover {
+  transform: translateY(-10px);
+  background: linear-gradient(145deg, #06beb6, #48b1f3);
+  box-shadow: 0 15px 35px rgba(6, 190, 182, 0.5),
+    0 8px 20px rgba(72, 177, 243, 0.5);
+}
+
+.floating-btn:active {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(6, 190, 182, 0.5),
+    0 3px 10px rgba(72, 177, 243, 0.5);
+}
+
+
+
+
+
+.youtube-link {
+  margin-top: 60px;
+  text-align: center;
+  font-size: 1rem;
+  color: black;
+}
+
+.youtube-link a {
+  color: #ff0000;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.youtube-link a:hover {
+  color: #fff;
+}
