@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 17 - Advanced Interactive Button</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Advanced Button with Click Action -->
+    <button class="advanced-button" onclick="toggleButtonText(this)">
+      Join the Challenge
+    </button>
+
+    <div class="youtube-link">
+      Enjoying this? Join the
+      <a
+        href="https://youtube.com/@wisecrest157?si=6Mmz8cSg2PDQLFcx"
+        target="_blank"
+        >Community
+      </a>
+      by subscribing!
+    </div>
+
+    <script>
+      function toggleButtonText(button) {
+        button.classList.toggle("active");
+        button.textContent = button.classList.contains("active")
+          ? "Joined!"
+          : "Join the Challenge";
+      }
+    </script>
+  </body>
+</html>

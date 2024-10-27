@@ -1,0 +1,111 @@
+/* Centering and Background */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  margin: 0;
+  background: radial-gradient(circle, #0f2027, #203a43, #2c5364);
+  font-family: Arial, sans-serif;
+}
+
+/* Button Styling */
+.advanced-button {
+  position: relative;
+  padding: 15px 60px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  background: linear-gradient(45deg, #ff4b2b, #ff416c, #ff4b2b);
+  background-size: 300% 300%;
+  cursor: pointer;
+  box-shadow: 0 15px 25px rgba(255, 65, 108, 0.5);
+  transition: transform 0.3s ease, background 0.5s, color 0.5s;
+  animation: gradientShift 5s ease infinite;
+  overflow: hidden;
+}
+
+/* Glowing Border */
+.advanced-button::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border-radius: 60px;
+  border: 4px solid rgba(255, 65, 108, 0.4);
+  opacity: 0.5;
+  animation: borderPulse 1.5s infinite;
+  pointer-events: none;
+}
+
+/* Hover Effects */
+.advanced-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 20px 30px rgba(255, 65, 108, 0.7);
+}
+
+.advanced-button:hover::before {
+  border-color: #fff;
+  opacity: 1;
+}
+
+/* Glowing Text Effect */
+.advanced-button:hover {
+  text-shadow: 0 0 8px #ff65a3, 0 0 15px #ff65a3;
+}
+
+/* Gradient Background Animation */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Pulsing Border Animation */
+@keyframes borderPulse {
+  0%,
+  100% {
+    opacity: 0.5;
+    border-width: 4px;
+  }
+  50% {
+    opacity: 1;
+    border-width: 8px;
+  }
+}
+
+/* Active State */
+.advanced-button.active {
+  background: linear-gradient(45deg, #28a745, #4caf50, #28a745);
+  color: #fff;
+  text-shadow: none;
+}
+
+.youtube-link {
+  margin-top: 60px;
+  text-align: center;
+  font-size: 1rem;
+  color: white;
+}
+
+.youtube-link a {
+  color: #ff0000;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.youtube-link a:hover {
+  color: #fff;
+}
