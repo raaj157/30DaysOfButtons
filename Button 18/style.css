@@ -1,0 +1,101 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  margin: 0;
+  background: linear-gradient(135deg, #0e0f15, #1f2836, #141726);
+  background-size: 300% 300%;
+  animation: gradientShift 8s ease infinite;
+  font-family: Arial, sans-serif;
+}
+
+/* Gradient shift animation for background */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.shimmer-button {
+  padding: 15px 45px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fff;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, #181a20, #2e2f38);
+  border: 2px solid #00c6ff;
+  border-radius: 30px;
+  cursor: pointer;
+  outline: none;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0px 0px 15px rgba(0, 198, 255, 0.5);
+}
+
+/* Neon shimmer effect */
+.shimmer-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(0, 198, 255, 0.5),
+    transparent
+  );
+  transform: skewX(-30deg);
+  transition: all 0.5s ease;
+}
+
+/* Hover animations */
+.shimmer-button:hover::before {
+  left: 100%;
+  transition: all 0.5s ease;
+}
+
+.shimmer-button:hover {
+  color: #00c6ff;
+  background: linear-gradient(135deg, #20252f, #353a47);
+  box-shadow: 0px 0px 25px rgba(0, 198, 255, 0.7),
+    0px 0px 45px rgba(0, 198, 255, 0.5);
+  border-color: #fff;
+}
+
+/* Click feedback */
+.shimmer-button:active {
+  transform: scale(0.98);
+}
+
+
+
+
+
+.youtube-link {
+  margin-top: 60px;
+  text-align: center;
+  font-size: 1rem;
+  color: white;
+}
+
+.youtube-link a {
+  color: #ff0000;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.youtube-link a:hover {
+  color: #fff;
+}
