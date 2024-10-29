@@ -1,0 +1,101 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  overflow: hidden;
+}
+
+/* Particle effects */
+.particle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: rgba(0, 255, 255, 0.6);
+  border-radius: 50%;
+  animation: float 8s infinite ease-in-out;
+  opacity: 0.8;
+}
+
+/* Keyframes for floating particles */
+@keyframes float {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translateY(-80px) translateX(20px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0) translateX(0);
+    opacity: 0.3;
+  }
+}
+
+/* Neon button styling */
+.neon-button {
+  padding: 15px 45px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  background: linear-gradient(145deg, #0f0c29, #302b63, #24243e);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.6), 0 0 40px rgba(0, 255, 255, 0.4),
+    0 0 60px rgba(0, 255, 255, 0.2);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 2;
+}
+
+/* Pulsating glow effect */
+.neon-button::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(0, 255, 255, 0.5), transparent 60%);
+  transform: scale(0);
+  transition: transform 0.6s ease;
+  border-radius: 50%;
+}
+
+/* Hover effect */
+.neon-button:hover {
+  transform: rotate(360deg);
+  box-shadow: 0 0 30px rgba(255, 0, 255, 0.6), 0 0 50px rgba(255, 0, 255, 0.4),
+    0 0 70px rgba(255, 0, 255, 0.2);
+}
+
+.neon-button:hover::before {
+  transform: scale(1.5);
+}
+
+.youtube-link {
+  margin-top: 60px;
+  text-align: center;
+  font-size: 1rem;
+  color: white;
+}
+
+.youtube-link a {
+  color: #ff0000;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.youtube-link a:hover {
+  color: #fff;
+}
