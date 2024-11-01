@@ -1,0 +1,96 @@
+/* Center and background */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    font-family: Arial, sans-serif;
+}
+
+/* Neon Ripple Button */
+.neon-button {
+    position: relative;
+    padding: 15px 50px;
+    font-size: 18px;
+    color: #fff;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, #ff00ff, #0099ff);
+    border: 2px solid #fff;
+    border-radius: 10px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+/* Neon Glow Outline */
+.neon-button::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    width: calc(100% + 10px);
+    height: calc(100% + 10px);
+    background: linear-gradient(45deg, rgba(255, 0, 255, 0.5), rgba(0, 153, 255, 0.5));
+    border-radius: 12px;
+    filter: blur(10px);
+    z-index: -1;
+    animation: pulse 2s infinite;
+}
+
+/* Ripple Effect on Hover */
+.neon-button::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.4s ease, height 0.4s ease, opacity 0.4s ease;
+}
+
+/* Hover effect */
+.neon-button:hover {
+    transform: scale(1.1);
+}
+
+.neon-button:hover::after {
+    width: 300px;
+    height: 300px;
+    opacity: 0;
+}
+
+/* Pulse Animation */
+@keyframes pulse {
+    0%, 100% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+
+
+.youtube-link {
+    margin-top: 60px;
+    text-align: center;
+    font-size: 1rem;
+    color: white;
+  }
+  
+  .youtube-link a {
+    color: #ff0000;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  .youtube-link a:hover {
+    color: #fff;
+  }
