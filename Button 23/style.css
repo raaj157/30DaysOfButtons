@@ -1,0 +1,119 @@
+/* Center body and set font */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+  background-color: #111;
+}
+
+/* Animated wavy gradient background */
+.background-animation {
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(135deg, #ff7b00, #ff00a1, #005dff, #00ff9d);
+  background-size: 400% 400%;
+  animation: waveAnimation 8s ease-in-out infinite;
+  filter: blur(50px);
+  z-index: 1;
+}
+
+/* Wave animation keyframes */
+@keyframes waveAnimation {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(0, 0) scale(1.1);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+/* Button container for perspective */
+.button-container {
+  perspective: 1000px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Button design */
+.button {
+  padding: 15px 30px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffffff;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  border-radius: 12px;
+  background: linear-gradient(45deg, #1eaeff, #ff63b4);
+  box-shadow: 0 0 15px rgba(30, 174, 255, 0.6), 0 0 30px rgba(255, 99, 180, 0.4);
+  transition: transform 0.4s, box-shadow 0.4s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+/* Hover effect for 3D flip and shadow */
+.button:hover {
+  transform: rotateY(180deg) scale(1.1);
+  box-shadow: 0 0 20px rgba(30, 174, 255, 0.8), 0 0 40px rgba(255, 99, 180, 0.6);
+}
+
+/* Flip content for button before and after */
+.button::before {
+  content: "Send Message";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  backface-visibility: hidden;
+  background: linear-gradient(45deg, #ff63b4, #1eaeff);
+}
+
+.button::after {
+  content: "Sending...";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+  background: linear-gradient(45deg, #1eaeff, #ff63b4);
+}
+
+
+
+.youtube-link {
+  margin-top: 60px;
+  text-align: center;
+  font-size: 1rem;
+  color: white;
+}
+
+.youtube-link a {
+  color: #ff0000;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.youtube-link a:hover {
+  color: #fff;
+}
