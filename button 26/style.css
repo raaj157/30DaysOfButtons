@@ -1,0 +1,64 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  margin: 0;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  font-family: Arial, sans-serif;
+}
+
+.button {
+  padding: 20px 50px;
+  font-size: 20px;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
+  background: linear-gradient(90deg, #00d4ff, #8e2de2);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s;
+  box-shadow: 0px 10px 20px rgba(142, 45, 226, 0.4),
+    inset 0px 0px 6px rgba(255, 255, 255, 0.2);
+  animation: pulse 1.5s infinite;
+}
+
+.button:hover {
+  transform: perspective(500px) rotateX(12deg) rotateY(12deg);
+  box-shadow: 0px 20px 30px rgba(142, 45, 226, 0.6),
+    inset 0px 0px 12px rgba(255, 255, 255, 0.4);
+  background: linear-gradient(90deg, #8e2de2, #00d4ff);
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    box-shadow: 0px 10px 20px rgba(142, 45, 226, 0.4),
+      inset 0px 0px 6px rgba(255, 255, 255, 0.2);
+  }
+  50% {
+    box-shadow: 0px 15px 25px rgba(142, 45, 226, 0.6),
+      inset 0px 0px 10px rgba(255, 255, 255, 0.4);
+  }
+}
+
+.youtube-link {
+  margin-top: 60px;
+  text-align: center;
+  font-size: 1rem;
+  color: white;
+}
+
+.youtube-link a {
+  color: #ff0000;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.youtube-link a:hover {
+  color: #fff;
+}
