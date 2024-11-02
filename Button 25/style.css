@@ -1,0 +1,77 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+    background: radial-gradient(circle, #1a1a1a, #0d0d0d);
+    font-family: Arial, sans-serif;
+}
+
+.flicker-button {
+    padding: 15px 35px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #f0f0f0;
+    background-color: transparent;
+    border: 3px solid #ff33cc;
+    border-radius: 12px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: color 0.3s ease;
+}
+
+.flicker-button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, #ff33cc, #00e6e6, #ff33cc);
+    filter: blur(6px);
+    border-radius: inherit;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.flicker-button:hover::before {
+    opacity: 0.7;
+}
+
+/* Flicker animation effect */
+@keyframes flicker {
+    0%, 18%, 22%, 25%, 53%, 57%, 100% {
+        opacity: 1;
+    }
+    20%, 24%, 55% {
+        opacity: 0;
+    }
+}
+
+.flicker-button:hover {
+    color: #fff;
+    animation: flicker 1.5s infinite steps(5, start);
+}
+
+
+.youtube-link {
+    margin-top: 60px;
+    text-align: center;
+    font-size: 1rem;
+    color: white;
+  }
+  
+  .youtube-link a {
+    color: #ff0000;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  .youtube-link a:hover {
+    color: #fff;
+  }
