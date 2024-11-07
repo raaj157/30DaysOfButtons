@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 28 Advanced 3D Button with Enhanced Functionality</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <button class="deep-dive-button"><span>Send Message</span></button>
+    <div class="youtube-link">
+      Enjoying this? Join the
+      <a
+        href="https://youtube.com/@wisecrest157?si=6Mmz8cSg2PDQLFcx"
+        target="_blank"
+        >Community
+      </a>
+      by subscribing!
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const button = document.querySelector(".deep-dive-button");
+
+        button.addEventListener("click", (e) => {
+          // Create the ripple effect
+          const ripple = document.createElement("span");
+          ripple.classList.add("ripple");
+          ripple.style.left = `${e.clientX - button.offsetLeft}px`;
+          ripple.style.top = `${e.clientY - button.offsetTop}px`;
+
+          // Append ripple to the button
+          button.appendChild(ripple);
+
+          // Remove ripple after animation
+          ripple.addEventListener("animationend", () => ripple.remove());
+        });
+      });
+    </script>
+  </body>
+</html>
